@@ -21,7 +21,12 @@ def test_user_can_send_form():
     browser.element('#userNumber').type('7987654543')
 
     #date
-    browser.element('#dateOfBirthInput').type(command.Keys.COMMAND + 'a' + command.Keys.NULL + '07 12 2022').press_enter()
+    browser.element('#dateOfBirthInput').click()
+    browser.element('.react-datepicker__month-select').click()
+    browser.element(".react-datepicker__month-select option[value='6']").click()
+    browser.element('.react-datepicker__year-select').click()
+    browser.element('.react-datepicker__year-select option[value="2022"]').click()
+    browser.element('.react-datepicker__day--012').click()
 
 
     #subjects
