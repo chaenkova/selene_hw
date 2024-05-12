@@ -39,10 +39,10 @@ def test_user_can_send_form():
     #state and city
 
     browser.element('#state').click()
-    browser.element('#state').all('[class$=option]').element_by(have.text('NCR')).click()
+    browser.element('#state').element('#react-select-3-option-0').click()
 
     browser.element('#city').click()
-    browser.element('#city').all('[class$=option]').element_by(have.text('Delhi')).click()
+    browser.element('#city').element('#react-select-4-option-0').click()
 
     browser.element('#submit').click()
 
