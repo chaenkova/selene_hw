@@ -3,7 +3,7 @@ import os
 
 
 def test_user_can_send_form():
-    browser.open("https://demoqa.com/automation-practice-form")
+    browser.open("automation-practice-form")
 
     #ФИО
     browser.element("#firstName").type('Masha')
