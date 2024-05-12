@@ -3,7 +3,7 @@ import os
 
 
 def test_user_can_send_form():
-    browser.open("automation-practice-form")
+    browser.open("/automation-practice-form")
 
     #ФИО
     browser.element("#firstName").type('Masha')
@@ -15,7 +15,7 @@ def test_user_can_send_form():
 
     #gender(можно и по id)
 
-    browser.element('#genterWrapper').all('label[for^=gender-radio]').element_by(have.text('Female')).click()
+    browser.element('[for="gender-radio-2"]').click()
 
     #phone
     browser.element('#userNumber').type('7987654543')
@@ -33,7 +33,7 @@ def test_user_can_send_form():
     browser.element('#subjectsInput').type("h").press_tab()
 
     #hobbies
-    browser.element('#hobbiesWrapper').all('[class*=checkbox]').element_by(have.text('Sports')).click()
+    browser.element('[for="hobbies-checkbox-1"]').click()
     #picture
 
     browser.element('#uploadPicture').send_keys(os.path.abspath('./pictures/picture.jpg'))
@@ -44,10 +44,10 @@ def test_user_can_send_form():
     #state and city
 
     browser.element('#state').click()
-    browser.element('#state').element('#react-select-3-option-0').click()
+    browser.element('#react-select-3-option-0').click()
 
     browser.element('#city').click()
-    browser.element('#city').element('#react-select-4-option-0').click()
+    browser.element('#react-select-4-option-0').click()
 
     browser.element('#submit').click()
 
