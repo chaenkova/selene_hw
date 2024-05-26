@@ -10,7 +10,7 @@ def browser_settings():
     browser.config.base_url = 'https://demoqa.com'
 
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     browser.config.driver_options = options
 
     yield
