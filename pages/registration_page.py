@@ -7,8 +7,8 @@ from data.user import User
 
 class RegistrationPage:
     def __init__(self):
-        self.state = browser.element('#state')
-        self.city = browser.element('#city')
+        self._state = browser.element('#state')
+        self._city = browser.element('#city')
 
     def open(self):
         browser.open('/automation-practice-form')
@@ -71,16 +71,16 @@ class RegistrationPage:
         return self
 
     def _fill_state(self, name):
-        self.state.perform(command.js.scroll_into_view)
-        self.state.click()
+        self._state.perform(command.js.scroll_into_view)
+        self._state.click()
         browser.all('[id^="react-select-3-option-"]').element_by(
             have.exact_text(name)
         ).click()
         return self
 
     def _fill_city(self, name):
-        self.city.perform(command.js.scroll_into_view)
-        self.city.click()
+        self._city.perform(command.js.scroll_into_view)
+        self._city.click()
         browser.all('[id^="react-select-4-option-"]').element_by(
             have.exact_text(name)
         ).click()
@@ -96,7 +96,7 @@ class RegistrationPage:
             ._fill_date_of_birth(student.date_year, student.date_month, student.date_day)
             ._fill_subjects(student.subject)
             ._fill_hobbies(student.hobby)
-            ._upload_picture(student.pic)
+            ._upload_picture(student.photo)
             ._fill_address(student.address)
             ._fill_state(student.state)
             ._fill_city(student.city)
