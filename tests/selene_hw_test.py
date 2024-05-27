@@ -1,5 +1,5 @@
 
-from tests.model.pages.registration_page import RegistrationPage
+from tests.pages.registration_page import RegistrationPage
 
 
 def test_user_can_send_form():

@@ -1,5 +1,4 @@
-from selene import have, command
-from selene.support.shared import browser
+from selene import browser, have, command
 import os
 
 
@@ -24,7 +23,6 @@ class RegistrationPage:
         browser.element("#userEmail").type(value)
         return self
 
-    #male - 1, female - 2
     def fill_gender(self, value):
         browser.element(f'[for="gender-radio-{value}"]').click()
         return self
@@ -65,7 +63,7 @@ class RegistrationPage:
     def fill_state(self, name):
         self.state.perform(command.js.scroll_into_view)
         self.state.click()
-        browser.all('[id^=react-select][id*=option]').element_by(
+        browser.all('[id^="react-select-3-option-"]').element_by(
             have.exact_text(name)
         ).click()
         return self
@@ -73,12 +71,12 @@ class RegistrationPage:
     def fill_city(self, name):
         self.city.perform(command.js.scroll_into_view)
         self.city.click()
-        browser.all('[id^=react-select][id*=option]').element_by(
+        browser.all('[id^="react-select-4-option-"]').element_by(
             have.exact_text(name)
         ).click()
         return self
 
-    def should_registered_user_with(self, full_name, email, gender, phone, date, subject, hobby, pic, addr, state):
+    def should_registered_user_with(self, full_name, email, gender, phone, date, subject, hobby, pic, address, state):
         browser.element('.table').all('td').even.should(
             have.exact_texts(
                 full_name,
@@ -89,7 +87,7 @@ class RegistrationPage:
                 subject,
                 hobby,
                 pic,
-                addr,
+                address,
                 state,
             )
         )
