@@ -62,8 +62,8 @@ class RegistrationPage:
             ))
         return self
 
-    def _fill_address(self, addr):
-        browser.element('#currentAddress').type(addr)
+    def _fill_address(self, address):
+        browser.element('#currentAddress').type(address)
         return self
 
     def _submit(self):
@@ -87,20 +87,20 @@ class RegistrationPage:
         return self
 
     def register(self, student: User):
-        (self._fill_first_name(student.name)
-         ._fill_last_name(student.surname)
-         ._fill_email(student.email)
-         ._fill_gender(student.gender)
-         ._fill_phone_number(student.phone)
-         ._fill_date_of_birth(student.date_year, student.date_month, student.date_day)
-         ._fill_subjects(student.subject)
-         ._fill_hobbies(student.hobby)
-         ._upload_picture(student.pic)
-         ._fill_address(student.address)
-         ._fill_state(student.state)
-         ._fill_city(student.city)
-
-         ._submit()
+        (
+            self._fill_first_name(student.name)
+            ._fill_last_name(student.surname)
+            ._fill_email(student.email)
+            ._fill_gender(student.gender)
+            ._fill_phone_number(student.phone)
+            ._fill_date_of_birth(student.date_year, student.date_month, student.date_day)
+            ._fill_subjects(student.subject)
+            ._fill_hobbies(student.hobby)
+            ._upload_picture(student.pic)
+            ._fill_address(student.address)
+            ._fill_state(student.state)
+            ._fill_city(student.city)
+            ._submit()
          )
         return self
 
@@ -114,7 +114,7 @@ class RegistrationPage:
                 f'{student.date_day} {student.date_month},{student.date_year}',
                 student.subject,
                 student.hobby,
-                student.pic,
+                student.photo,
                 student.address,
                 f'{student.state} {student.city}'
             )

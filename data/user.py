@@ -13,7 +13,7 @@ class User:
     date_day: str
     subject: str
     hobby: str
-    pic: str
+    photo: str
     address: str
     state: str
     city: str
