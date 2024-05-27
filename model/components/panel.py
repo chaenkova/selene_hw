@@ -7,6 +7,7 @@ class Panel:
         self.container = browser.element('.left-pannel')
 
     def open(self, item):
+        browser.open('/elements')
         self.container.all('li').element_by(have.exact_text(item)).click()
 
     def open_simple_registration_form(self):
