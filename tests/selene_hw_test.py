@@ -15,7 +15,7 @@ def test_user_can_send_form():
             .fill_date_of_birth('2022', 'July', '12')
             .fill_subjects('Hindi')
             .fill_hobbies('1')
-            .upload_picture('./pictures/picture.jpg')
+            .upload_picture('picture.jpg')
             .fill_address('Address')
             .fill_state('NCR')
             .fill_city('Delhi')
