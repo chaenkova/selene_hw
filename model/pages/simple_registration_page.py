@@ -1,5 +1,5 @@
 from selene import browser
-from model.data.users import User
+from data.users import User
 
 
 class SimpleRegistrationPage:

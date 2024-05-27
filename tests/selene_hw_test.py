@@ -1,5 +1,5 @@
 from model.application import app
-from model.data import users
+from data import users
 
 
 def test_registers_user():
