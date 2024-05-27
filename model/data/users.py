@@ -5,8 +5,8 @@ import dataclasses
 class User:
     full_name: str
     email: str
-    addr: str
-    permanent_addr: str
+    address: str
+    permanent_address: str
 
 
-student = User(full_name='Vasya Pupkin', email='vsya@gmail.com', addr='sovet union', permanent_addr='ne dom i ne ulitsa')
+student = User(full_name='Vasya Pupkin', email='vsya@gmail.com', address='sovet union', permanent_address='ne dom i ne ulitsa')

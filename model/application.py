@@ -1,5 +1,3 @@
-from selene.support.shared import browser
-
 from model.components.panel import Panel
 from model.pages.simple_registration_page import (
     SimpleRegistrationPage,

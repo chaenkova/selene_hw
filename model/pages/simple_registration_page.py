@@ -32,7 +32,7 @@ class SimpleRegistrationPage:
     def register(self, user: User):
         self.fill_full_name(user.full_name)
         self.fill_email(user.email)
-        self.fill_current_address(user.addr)
-        self.fill_permanent_address(user.permanent_addr)
+        self.fill_current_address(user.address)
+        self.fill_permanent_address(user.permanent_address)
         self.submit()
         return self
