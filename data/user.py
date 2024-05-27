@@ -14,6 +14,6 @@ class User:
     subject: str
     hobby: str
     pic: str
-    addr: str
+    address: str
     state: str
     city: str

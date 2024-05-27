@@ -1,7 +1,5 @@
-from selene import have, command
-from selene.support.shared import browser
+from selene import browser, have, command
 import os
-
 from data.user import User
 
 
@@ -70,7 +68,7 @@ class RegistrationPage:
     def _fill_state(self, name):
         self.state.perform(command.js.scroll_into_view)
         self.state.click()
-        browser.all('[id^=react-select][id*=option]').element_by(
+        browser.all('[id^="react-select-3-option-"]').element_by(
             have.exact_text(name)
         ).click()
         return self
@@ -78,27 +76,27 @@ class RegistrationPage:
     def _fill_city(self, name):
         self.city.perform(command.js.scroll_into_view)
         self.city.click()
-        browser.all('[id^=react-select][id*=option]').element_by(
+        browser.all('[id^="react-select-4-option-"]').element_by(
             have.exact_text(name)
         ).click()
         return self
 
     def register(self, student: User):
         (self._fill_first_name(student.name)
-            ._fill_last_name(student.surname)
-            ._fill_email(student.email)
-            ._fill_gender(student.gender)
-            ._fill_phone_number(student.phone)
-            ._fill_date_of_birth(student.date_year, student.date_month, student.date_day)
-            ._fill_subjects(student.subject)
-            ._fill_hobbies(student.hobby)
-            ._upload_picture(student.pic)
-            ._fill_address(student.addr)
-            ._fill_state(student.state)
-            ._fill_city(student.city)
+         ._fill_last_name(student.surname)
+         ._fill_email(student.email)
+         ._fill_gender(student.gender)
+         ._fill_phone_number(student.phone)
+         ._fill_date_of_birth(student.date_year, student.date_month, student.date_day)
+         ._fill_subjects(student.subject)
+         ._fill_hobbies(student.hobby)
+         ._upload_picture(student.pic)
+         ._fill_address(student.address)
+         ._fill_state(student.state)
+         ._fill_city(student.city)
 
-            ._submit()
-            )
+         ._submit()
+         )
         return self
 
     def should_registered_user_with(self, student: User):
@@ -112,7 +110,7 @@ class RegistrationPage:
                 student.subject,
                 student.hobby,
                 student.pic,
-                student.addr,
+                student.address,
                 f'{student.state} {student.city}'
             )
         )

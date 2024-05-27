@@ -1,8 +1,5 @@
-from selene import browser, command, have
-import os
-
 from data.user import User
-from tests.model.pages.registration_page import RegistrationPage
+from pages.registration_page import RegistrationPage
 
 
 def test_user_can_send_form():
