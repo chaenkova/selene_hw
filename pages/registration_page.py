@@ -56,8 +56,8 @@ class RegistrationPage:
             ))
         return self
 
-    def fill_address(self, addr):
-        browser.element('#currentAddress').type(addr)
+    def fill_address(self, address):
+        browser.element('#currentAddress').type(address)
         return self
 
     def submit(self):
@@ -80,7 +80,7 @@ class RegistrationPage:
         ).click()
         return self
 
-    def should_registered_user_with(self, full_name, email, gender, phone, date, subject, hobby, pic, address, state):
+    def should_registered_user_with(self, full_name, email, gender, phone, date, subject, hobby, photo, address, state):
         browser.element('.table').all('td').even.should(
             have.exact_texts(
                 full_name,
@@ -90,7 +90,7 @@ class RegistrationPage:
                 date,
                 subject,
                 hobby,
-                pic,
+                photo,
                 address,
                 state,
             )
